@@ -5,6 +5,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  *::-webkit-scrollbar {
+    height: 10px;
+    border: 1px solid #4e4e4f;
+    background-color: rgb(185, 185, 185);
+    overflow: visible;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #4a4949;
+    border: 1px solid grey;
+    border-radius: 22px;
+  }
 }
 
 code {
@@ -12,4 +24,23 @@ code {
     monospace;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
 
+button {
+  font-weight: 700;
+  color: #000000;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 8px;
+  background: linear-gradient(45deg, rgb(56, 163, 139), rgb(11, 45, 221));
+  box-shadow: 0 -3px rgb(29, 37, 34) inset;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: grey;
+}
