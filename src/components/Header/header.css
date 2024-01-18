@@ -1,0 +1,22 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    background: #13375a;
+    box-shadow: 0 5px 12px #000000;
+    color: azure;
+}
+
+
+.header__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    font-weight: 700;
+}

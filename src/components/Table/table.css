@@ -1,0 +1,54 @@
+.table {
+    margin-top: 70px;
+    background-color: #000000;
+    color: azure;
+}
+
+.table span {
+    color: #000000;
+    font-weight: 700;
+}
+
+.table__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+    background-color: rgba(27, 79, 130, 0.7);
+    box-shadow: 0 0 150px white;
+    width: 90%;
+    min-height: calc(100vh - 70px);
+    margin: auto;
+    font-weight: 700;
+}
+
+.table__title {
+
+}
+
+.table__date {
+    padding: 15px;
+}
+
+.table img {
+    min-height: 80vh;
+    min-width: 90%;
+    border: 2px solid white;
+    border-radius: 8px;
+    box-shadow: 0 3px 20px black;
+}
+
+.table__copyright {
+    padding: 15px;
+}
+
+.table__explanation {
+    padding: 15px;
+    text-align: start;
+    width: 90%;
+    font-family: "Roboto", arial, sans-serif;
+    font-weight: 400;
+    border: 1px solid white;
+    border-radius: 8px;
+}
