@@ -5,8 +5,9 @@
 }
 
 .table span {
-    color: #000000;
+    color: #9898e3;
     font-weight: 700;
+    text-decoration: underline;
 }
 
 .table__container {
@@ -68,6 +69,11 @@
     border: 2px solid white;
     border-radius: 8px;
     box-shadow: 0 3px 20px black;
+}
+
+.table img:hover {
+    transition: .5s;
+    scale: 1.2;
 }
 
 .table iframe {

@@ -1,8 +1,7 @@
 import axios from 'axios'
 
-const demoKey1 = 'BhGcNq7WsGMSUyjspXtJpTMfwnIA0DyJsqgoZgU8'
-const demoKey2 = 'WVHsnUw2gt57yH1e0Z7A5MUC61scQsjYGPuOBHUC'
+const key = 'BhGcNq7WsGMSUyjspXtJpTMfwnIA0DyJsqgoZgU8'
 
 export const instance = axios.create({
-    baseURL: `https://api.nasa.govwww/planetary/apod?api_key=` + demoKey1
+    baseURL: `https://api.nasa.gov/planetary/apod?api_key=` + key
 })

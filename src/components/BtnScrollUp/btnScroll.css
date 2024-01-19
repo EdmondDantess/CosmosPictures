@@ -1,0 +1,16 @@
+.btn_scroll-up {
+    display: none;
+    position: fixed;
+    padding: 20px;
+    border-radius: 50%;
+    color: white;
+    box-shadow: 0 3px 22px black;
+    background-color: #1f4c78;
+    bottom: 40px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.btn_scroll-up:active {
+    background-color: #4e4e4f;
+}

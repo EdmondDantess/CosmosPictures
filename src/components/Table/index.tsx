@@ -1,14 +1,16 @@
-import './table.css'
 import React, {useEffect, useState} from 'react';
-import {useAppStore} from '../../store/app.store';
-import {IPictureOfDayData} from '../../lib/definitions';
+import {fetchDataSelector, isLoadingSelector, nasaDataSelector, useAppStore} from '../../store/app';
+import {IPictureOfDayData} from '../../utils/types';
 import {Spiner} from '../Spiner';
+import './table.css'
 
 export const Table = () => {
+
     const [currentPage, setCurrentPage] = useState(1);
-    const fetchData = useAppStore(state => state.fetchData)
-    const isLoading = useAppStore(state => state.isLoading)
-    const data = useAppStore(state => state.nasaData)
+
+    const fetchData = useAppStore(fetchDataSelector)
+    const isLoading = useAppStore(isLoadingSelector)
+    const data = useAppStore(nasaDataSelector)
 
     const handleClick = (page: number) => {
         setCurrentPage(page);
@@ -24,12 +26,12 @@ export const Table = () => {
         return data.slice(start, end).map((el: IPictureOfDayData) => {
             return <div className={'table__card'} key={el.explanation}>
                 <div className={'table__title'}>{el.title}</div>
-                <div className={'table__date'}>{el.date}</div>
+                <div className={'table__date'}><span>Date:</span> {el.date}</div>
                 {el.media_type === 'image' && <img src={el.url} alt="image"/>}
                 {el.media_type === 'video' && <iframe src={el.url} allowFullScreen/>}
                 {el.copyright &&
                     <div className={'table__copyright'}><span>Copyright:</span> {el.copyright}</div>}
-                <div className={'table__explanation'}><span>Explanation: </span>{el.explanation}</div>
+                <div className={'table__explanation'}><span>Explanation:</span> {el.explanation}</div>
             </div>
         })
     };
@@ -47,17 +49,16 @@ export const Table = () => {
         return pageNumbers;
     };
 
+
     return <div className={'table'}>
         <div className={'table__container'}>
             {
                 isLoading
                     ? <Spiner/>
                     : <>
+                        {data.length === 0 && <div>Information no found...</div>}
                         {data.length > 5 && <div className={'table__pagination'}>{renderPagination()}</div>}
-                        {data.length !== 0
-                            ?   renderData()
-                        :<div className={'table__no-data'}>Empty</div>
-                        }
+                        {renderData()}
                     </>
             }
         </div>
