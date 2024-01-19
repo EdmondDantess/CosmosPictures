@@ -20,8 +20,7 @@ export const useAppStore = create<IAppStore>((set) => ({
             set({msg: null})
             set({isLoading: true})
             const data = await instance.get('')
-            set({nasaData: [data.data]})
-            set({msg: 'Picture of the Day is loaded successfully'})
+            set({nasaData: [data.data], msg: 'Picture of the Day is loaded successfully'})
         } catch (e) {
             set({msg: 'An error occurred while communicating with the server'})
             console.warn(e)
@@ -31,16 +30,14 @@ export const useAppStore = create<IAppStore>((set) => ({
     },
     fetchRangeData: async (start_date: string, end_date: string) => {
         try {
-            set({msg: null})
-            set({isLoading: true})
+            set({msg: null, isLoading: true})
             const data = await instance.get('', {
                 params: {
                     start_date,
                     end_date,
                 }
             })
-            set({nasaData: data.data})
-            set({msg: 'Archive Pictures is loaded successfully'})
+            set({nasaData: data.data, msg: 'Archive Pictures is loaded successfully'})
         } catch (e) {
             set({msg: 'An error occurred while communicating with the server', nasaData: []})
             console.warn(e)
