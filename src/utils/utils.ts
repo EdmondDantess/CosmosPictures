@@ -8,3 +8,5 @@ export const transformDateForQuery = (date: Date | null) => {
         return 'invalidDate'
     }
 }
+
+export const utcTimeNow = () => new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60000)

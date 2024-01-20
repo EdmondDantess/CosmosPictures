@@ -20,6 +20,10 @@ export const Table = () => {
         fetchData()
     }, [])
 
+    useEffect(() => {
+        setCurrentPage(1)
+    }, [data]);
+
     const renderData = () => {
         const start = (currentPage - 1) * 5;
         const end = start + 5;

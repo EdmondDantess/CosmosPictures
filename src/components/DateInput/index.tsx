@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {fetchDataSelector, fetchRangeDataSelector, isLoadingSelector, useAppStore} from '../../store/app';
-import {transformDateForQuery} from '../../utils/utils';
+import {transformDateForQuery, utcTimeNow} from '../../utils/utils';
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
 import './dateInput.css'
@@ -43,13 +43,11 @@ export const DateInput = () => {
         showYearDropdown
         showMonthDropdown
         selectsRange
-        placeholderText={transformDateForQuery(new Date())}
+        placeholderText={transformDateForQuery(utcTimeNow())}
         dropdownMode={'select'}
         minDate={new Date(1995, 5, 16)}
-        maxDate={new Date()}
+        maxDate={utcTimeNow()}
         withPortal
-        disabled={isLoading}
-    />
+        disabled={isLoading}/>
     </div>
-
 }
