@@ -5,7 +5,7 @@ export const transformDateForQuery = (date: Date | null) => {
         let day = ('0' + date.getDate()).slice(-2);
         return year + '-' + month + '-' + day;
     } else {
-        return 'invalidDate'
+        return ''
     }
 }
 

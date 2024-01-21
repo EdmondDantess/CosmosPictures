@@ -20,3 +20,14 @@
     margin: auto;
     font-weight: 700;
 }
+
+.header__container > span {
+    width: 310px;
+}
+
+.header__container > a > button {
+    position: fixed;
+    left: -30px;
+    bottom: 10vh;
+    transform: rotate(270deg);
+}

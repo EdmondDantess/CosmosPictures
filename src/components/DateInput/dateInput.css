@@ -1,11 +1,28 @@
 .date {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    overflow: auto;
 }
 
-.date input {
-    text-align: center;
-    border-radius: 8px;
-    padding: 10px 15px
+.react-datepicker__input-container > button {
+    width: 250px;
+}
+
+.date__range-text {
+    padding: 5px;
+}
+
+.date__range-text > span {
+    color: #9898e3;
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width: 609px) {
+    .react-datepicker__input-container > button {
+        width: 65px;
+    }
 }
